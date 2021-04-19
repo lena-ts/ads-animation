@@ -43,6 +43,10 @@ a {
     background-size: cover;
     background-position-x: -90px;
 }
+.no-app-image{
+    background-image: url("images/img-bg-1.png");
+    background-position-x: 0;
+}
 .image-shade {
     position: absolute;
     top: 0;
@@ -54,13 +58,22 @@ a {
 .footer {
     display: grid;
     grid-template-columns: auto auto;
-    max-width: 175px;
-    width: 175px;
+    max-width: 200px;
+    width: 200px;
+}
+.footer .ads {
+    text-align: right;
 }
 .link {
     display: grid;
     grid-template-columns: 16px auto;
     align-items: center;
+}
+
+.disclaimer{
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 2px;
 }
 
 .ads span{
@@ -85,7 +98,7 @@ a {
     width: 100%;
 }
 .content-inner{
-    padding: 10px 12px;
+    padding: 8px 12px;
     display: grid;
     grid-template-columns: auto 5px;
 }
@@ -104,9 +117,7 @@ a {
     height: 48px;
     transform: scale(0);
 }
-/*.ad-action img{*/
-/*    transform: scale(0);*/
-/*}*/
+
 .ad-action-animate{
     transform: scale(1);
     transition: 0.2s;
@@ -133,8 +144,8 @@ a {
 }
 .action{
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 12px;
+    right: 13px;
 }
 .action-image{
     width: 4px;
@@ -192,10 +203,10 @@ a {
     height: 100%;
     background-color: rgba(255,255,255, 0.95);
     z-index: 3;
-    padding: 10px 10px;
+    padding: 5px 6px;
 }
 .cl-inner {
-    width: 305px;
+    width: 310px;
 }
 .cl-title {
     font-weight: 500;
