@@ -141,6 +141,13 @@ a {
     background-image: url("images/union.svg");
 }
 
+.rating{
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-column-gap: 7px;
+    align-items: center;
+}
+
 #trigger-button {
     position: fixed;
     right: 100px;
