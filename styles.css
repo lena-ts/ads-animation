@@ -236,6 +236,33 @@ a {
     cursor: pointer;
 }
 
+#fixed-ad .replacing-title {
+    position: relative;
+}
+#fixed-ad .content-inner-wrapper-opened {
+    display: block;
+}
+#fixed-ad .content-inner-wrapper-opened .title-container{
+    display: grid;
+    max-width: 295px;
+    grid-template-columns: auto 60px;
+}
+
+#fixed-ad .ad-action{
+    margin-top: 5px;
+}
+
+#fixed-ad .ads {
+    position: absolute;
+    bottom: -1px;
+    right: -4px;
+}
+#fixed-ad .footer {
+    width: 100px;
+    max-width: 100px;
+    margin-top: 8px;
+}
+
 @media screen and (max-width: 600px)  {
     #trigger-button {
         position: relative;
