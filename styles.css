@@ -245,7 +245,7 @@ a {
 #fixed-ad .content-inner-wrapper-opened .title-container{
     display: grid;
     max-width: 295px;
-    grid-template-columns: auto 60px;
+    grid-template-columns: auto 55px;
 }
 
 #fixed-ad .ad-action{
