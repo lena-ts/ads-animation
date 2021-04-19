@@ -41,6 +41,7 @@ a {
     height: 100%;
     background-image: url("images/img-bg.png");
     background-size: cover;
+    background-position-x: -90px;
 }
 .image-shade {
     position: absolute;

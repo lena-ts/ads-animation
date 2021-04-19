@@ -56,7 +56,9 @@
         crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
-        console.log('it works')
+        var explode = function(){
+            $('.ad-action').css("transform", 'scale(1.2)')
+        };
         $('#trigger-button').click(function(){
             if($(this).hasClass('toggled') === false) {
                 $('.in').addClass('hidden')
@@ -66,12 +68,13 @@
                 $('.ad-action').removeClass('hidden')
                 $('.content-inner-wrapper').addClass('content-inner-wrapper-opened')
                 // $('.ad-action').delay(1500).addClass('ad-action-animate')
-                $('.ad-action').delay(500).css("transform", 'scale(1.2)')
+                // $('.ad-action').delay(1500).css("transform", 'scale(1)')
                 $('.title').fadeOut( 400 )
                 $('.replacing-title').delay( 200 ).fadeIn( 800 )
                 // $('.title').addClass('hidden')
                 // $('.replacing-title').removeClass('hidden')
                 $(this).addClass('toggled');
+                setTimeout(explode, 500);
             }
             else {
                 $(this).removeClass('toggled');
