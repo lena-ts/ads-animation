@@ -1,3 +1,159 @@
+body {
+    background-color: #ccc;
+    font-family: Roboto, sans-serif;
+    color: #222426;
+}
+a {
+    text-decoration: none;
+    color: #222426;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.hidden {
+    display: none;
+}
 .container {
-    background: red;
+    position: relative;
+    width: 360px;
+    height: 720px;
+    margin: 100px auto 0;
+    background-image: url("images/bg.png");
+    background-size: cover;
+}
+
+.card {
+    position: absolute;
+    bottom: 120px;
+    left: 20px;
+    width: 321px;
+    height: 98px;
+    margin: auto;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 2px rgba(147, 156, 176, 0.1), 0px 4px 12px rgba(147, 156, 176, 0.3);
+    overflow: hidden;
+}
+
+.image {
+    position: relative;
+    width: 45%;
+    height: 100%;
+    background-image: url("images/img-bg.png");
+    background-size: cover;
+}
+.image-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.1);
+}
+.footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: 175px;
+    width: 175px;
+}
+.link {
+    display: grid;
+    grid-template-columns: 16px auto;
+    align-items: center;
+}
+
+.ads span{
+    color: #939CB0;
+    font-size: 12px;
+}
+
+#content{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    border-radius: 12px;
+}
+.content {
+    width: 70%;
+    height: 100%;
+    transition: 0.5s;
+}
+.content-expand {
+    width: 100%;
+}
+.content-inner{
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: auto 5px;
+}
+.content-inner-wrapper{
+    position: relative;
+    padding-right: 10px;
+}
+.content-inner-wrapper-opened {
+    display: grid;
+    grid-template-columns: auto 60px;
+}
+.ad-action{
+    margin-top: 15px;
+    transition: 0.2s;
+    width:48px;
+    height: 48px;
+    transform: scale(0);
+}
+/*.ad-action img{*/
+/*    transform: scale(0);*/
+/*}*/
+.ad-action-animate{
+    transform: scale(1);
+    transition: 0.2s;
+}
+.title-container {
+    position: relative;
+    max-width: 222px;
+    height: 42px;
+}
+.title{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 185px;
+    transition(0.5s);
+}
+.replacing-title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-weight: 500;
+    transition(0.5s);
+}
+.action{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.action-image{
+    width: 4px;
+    height: 15px;
+    background-image: url("images/union.svg");
+}
+
+#trigger-button {
+    position: fixed;
+    right: 100px;
+    top: 50%;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#trigger-button:hover {
+    background-color: #4b7ed8;
+}
+
+#trigger-button span {
+    color: white;
 }
