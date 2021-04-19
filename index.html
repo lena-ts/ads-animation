@@ -10,7 +10,25 @@
 <body>
 <div class="container">
     <div class="card">
+        <div class="close-overlay hidden">
+            <div class="cl-inner">
+                <div class="cl-content">
+                    <div class="cl-title">
+                        <span>Скрыть рекламу:</span>
+                        <div class="cl-icon"><img src="images/close.svg" width="16" height="16"/></div>
+                    </div>
+                    <div class="cl-table">
+                        <div class="cl-cell cl-icon">Не интересуюсь этой темой</div>
+                        <div class="cl-cell cl-icon">Товар куплен или услуга найдена</div>
+                        <div class="cl-cell cl-icon">Нарушает закон или спам</div>
+                        <div class="cl-cell cl-icon">Мешает простмотру контента</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <div class="image">
+            <div class="app-icon"><img src="images/tobuy-icon.png"/></div>
             <div class="image-shade"></div>
         </div>
         <div id="content" class="content">
@@ -40,7 +58,7 @@
                     </div>
                     <div class="ad-action"><img src="images/ad-action.svg"/></div>
                 </div>
-                <div class="action"><div class="action-image"></div> </div>
+                <div class="action" id="close-action"><div class="action-image"></div> </div>
             </div>
         </div>
     </div>
@@ -88,6 +106,15 @@
                 $('.title').delay( 300 ).fadeIn( 400 )
                 $('.replacing-title').fadeOut( 400 )
             }
+        })
+
+        $('#close-action').click(function(){
+            $('.close-overlay').removeClass('hidden')
+            $('#trigger-button').css('opacity', '0.4')
+        })
+        $('.cl-icon').click(function(){
+            $('.close-overlay').addClass('hidden')
+            $('#trigger-button').css('opacity', '1')
         })
     })
 </script>
