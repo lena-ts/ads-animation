@@ -39,9 +39,10 @@ a {
     position: relative;
     width: 45%;
     height: 100%;
+    float: right;
     background-image: url("images/img-bg.png");
     background-size: cover;
-    background-position-x: -90px;
+    background-position-x: -50px;
 }
 .no-app-image{
     background-image: url("images/img-bg-1.png");
@@ -57,12 +58,13 @@ a {
 }
 .footer {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 100%;
+    grid-column-gap: 6px;
     max-width: 200px;
     width: 200px;
 }
 .footer .ads {
-    text-align: right;
+
 }
 .link {
     display: grid;
@@ -84,7 +86,7 @@ a {
 
 #content{
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     background-color: white;
     border-radius: 12px;
@@ -148,6 +150,19 @@ a {
     top: 12px;
     right: 13px;
 }
+.action-small{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    background: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
 .action-image{
     width: 4px;
     height: 15px;
@@ -164,7 +179,7 @@ a {
 .app-icon {
     position: absolute;
     top: calc(50% - 30px);
-    left: 20px;
+    right: 20px;
     z-index: 1;
 }
 
