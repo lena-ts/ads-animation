@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ads Animation</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-inversed.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="close-overlay hidden">
+            <div class="cl-inner">
+                <div class="cl-content">
+                    <div class="cl-title">
+                        <span>Скрыть рекламу:</span>
+                        <div class="cl-icon"><img src="images/close.svg" width="16" height="16"/></div>
+                    </div>
+                    <div class="cl-table">
+                        <div class="cl-cell cl-icon">Не интересуюсь</div>
+                        <div class="cl-cell cl-icon">Уже купил</div>
+                        <div class="cl-cell cl-icon">Спам</div>
+                        <div class="cl-cell cl-icon">Мешает</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="image no-app-image bordered-image">
+            <div class="image-shade"></div>
+        </div>
+        <div id="content" class="content bordered-content">
+            <div class="content-inner">
+                <div class="content-inner-wrapper">
+                    <div class="ad-body">
+                        <div class="footer">
+                            <div class="link">
+                                <img src="images/fav1.png" width="12" height="12"/>
+                                <a href="#">stroikadomov.ru</a>
+                            </div>
+                            <div class="ads">
+                                <span>Реклама</span>
+                                <span>18+</span>
+                            </div>
+                        </div>
+                        <div class="title-container">
+                            <div class="title">Новый проект Остров от ДОНСТРОЙТЕХ</div>
+                            <div class="replacing-title hidden">
+                                Содействие в подборе финансовых услуг и организаций содействие в подборе финансовых
+                                <div class="disclaimer">
+                                    Есть противопоказания. Посоветуйтесь с врачом
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ad-action"><img src="images/ad-action-gray.svg" width="50"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="action-small bordered-action" id="close-action"><div class="action-image"></div> </div>
+    </div>
+</div>
+<div id="trigger-button">
+    <span class="in">Включить анимацию</span>
+    <span class="out hidden">Выключить анимацию</span>
+</div>
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        var explode = function(){
+            $('.ad-action').css("transform", 'scale(1.2)')
+        };
+        var imgdelay = () => {
+            $('.image').css({'transform':'scale(1)', 'opacity': 1});
+        }
+        $('#trigger-button').click(function(){
+            if($(this).hasClass('toggled') === false) {
+                $('.in').addClass('hidden')
+                $('.out').removeClass('hidden')
+                $('.out').removeClass('hidden')
+                $('#content').addClass('content-expand');
+                $('.ad-action').removeClass('hidden')
+                $('.content-inner-wrapper').addClass('content-inner-wrapper-opened')
+                // $('.ad-action').delay(1500).addClass('ad-action-animate')
+                // $('.ad-action').delay(1500).css("transform", 'scale(1)')
+                $('.title').fadeOut( 400 )
+                $('.replacing-title').delay( 200 ).fadeIn( 800 )
+                // $('.title').addClass('hidden')
+                // $('.replacing-title').removeClass('hidden')
+                $(this).addClass('toggled');
+                $('.image').css({'transform':'scale(0)', 'opacity': 0});
+                setTimeout(explode, 300);
+            }
+            else {
+                $(this).removeClass('toggled');
+                $('.in').removeClass('hidden')
+                $('.out').addClass('hidden')
+                $('#content').removeClass('content-expand');
+                $('.ad-action').addClass('hidden')
+                $('.content-inner-wrapper').removeClass('content-inner-wrapper-opened')
+                // $('.ad-action').removeClass('ad-action-animate')
+                $('.ad-action').delay(500).css("transform", 'scale(0)')
+                $('.title').delay( 300 ).fadeIn( 400 )
+                $('.replacing-title').fadeOut( 400 )
+                setTimeout(imgdelay, 200)
+            }
+        })
+
+        $('#close-action').click(function(){
+            $('.close-overlay').removeClass('hidden')
+            $('#trigger-button').css('opacity', '0.4')
+        })
+        $('.cl-icon').click(function(){
+            $('.close-overlay').addClass('hidden')
+            $('#trigger-button').css('opacity', '1')
+        })
+    })
+</script>
