@@ -68,7 +68,7 @@ a {
     background-color: rgba(0,0,0, 0.1);
 }
 .bordered-image {
-    width: 80px;
+    width: 100px;
     height: 77px;
     border-radius: 10px;
     overflow: hidden;
