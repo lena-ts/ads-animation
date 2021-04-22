@@ -85,6 +85,9 @@
         var explode = function(){
             $('.ad-action').css("transform", 'scale(1.2)')
         };
+        var dotDelay = function() {
+            $('.dot').css('background-color', '#A8AEBC')
+        }
         $('#trigger-button').click(function(){
             if($(this).hasClass('toggled') === false) {
                 $('.in').addClass('hidden')
@@ -101,6 +104,7 @@
                 // $('.replacing-title').removeClass('hidden')
                 $(this).addClass('toggled');
                 setTimeout(explode, 500);
+                setTimeout(dotDelay, 200)
             }
             else {
                 $(this).removeClass('toggled');
@@ -113,6 +117,7 @@
                 $('.ad-action').delay(500).css("transform", 'scale(0)')
                 $('.title').delay( 300 ).fadeIn( 400 )
                 $('.replacing-title').fadeOut( 400 )
+                $('.dot').css('background-color', 'white')
             }
         })
 

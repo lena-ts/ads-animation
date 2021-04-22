@@ -167,12 +167,12 @@ a {
     z-index: 2;
     background: rgba(0,0,0, 0.05);
     backdrop-filter: blur(16px);
-    width: 25px;
-    height: 25px;
+    width: 18px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 100%;
+    border-radius: 10px;
 }
 .action-image{
     width: 4px;
@@ -182,16 +182,17 @@ a {
 .action-small .action-image{
     background-image: none;
     /*background-image: url("images/union-white.svg");*/
-    margin-top: -1px;
+    margin-top: -2px;
 }
 .dot {
     width: 4px;
     height: 4px;
     background-color: white;
     border-radius: 100%;
-    box-shadow: 0px 2px 2px rgba(0,0,0, 0.2);
+    /*box-shadow: 0px 2px 2px rgba(0,0,0, 0.2);*/
     margin-bottom: 2px;
     transform: scale(0.8);
+    transition: 0.2s;
 }
 .bordered-action {
     top: 35px;
