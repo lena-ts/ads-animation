@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="styles-inversed.css">
 </head>
 <body>
-<div class="container">
-    <div class="card">
+<div class="container bordered-container">
+    <div class="card" style="box-shadow: 0px 0px 0px rgba(0,0,0, 0)">
         <div class="close-overlay hidden">
             <div class="cl-inner">
                 <div class="cl-content">
@@ -32,7 +32,7 @@
             <div class="image-shade"></div>
         </div>
         <div id="content" class="content bordered-content">
-            <div class="content-inner">
+            <div class="content-inner" style="padding-left: 10px">
                 <div class="content-inner-wrapper">
                     <div class="ad-body">
                         <div class="footer">
@@ -45,8 +45,8 @@
                                 <span>18+</span>
                             </div>
                         </div>
-                        <div class="title-container">
-                            <div class="title">Новый проект Остров от ДОНСТРОЙТЕХ</div>
+                        <div class="title-container" style="max-width: 230px">
+                            <div class="title" style="font-size: 16px; line-height: 20px;">Новый проект Остров от ДОНСТРОЙТЕХ дома с видом на озеро</div>
                             <div class="replacing-title hidden">
                                 Содействие в подборе финансовых услуг и организаций содействие в подборе финансовых
                                 <div class="disclaimer">
@@ -55,11 +55,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ad-action"><img src="images/ad-action-gray.svg" width="50"/></div>
+                    <div class="ad-action" style="margin-top: 13px; margin-left: -6px;"><img src="images/ad-action-gray.svg" width="50"/></div>
                 </div>
             </div>
         </div>
-        <div class="action-small bordered-action" id="close-action"><div class="action-image"></div> </div>
+        <div class="action-small bordered-action" id="close-action" style="background: none">
+            <div class="action-image">
+                <div class="dot" style="background-color: #A8AEBC"></div>
+                <div class="dot" style="background-color: #A8AEBC"></div>
+                <div class="dot" style="background-color: #A8AEBC"></div>
+            </div>
+        </div>
     </div>
 </div>
 <div id="trigger-button">
