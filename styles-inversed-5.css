@@ -48,6 +48,7 @@ a {
     width: 100px;
     height: 100px;
     float: right;
+    margin-top: 5px;
     background-image: url("images/img-bg.png");
     background-size: cover;
     background-position-x: -50px;
