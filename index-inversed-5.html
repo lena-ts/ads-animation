@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ads Animation</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles-inversed-5.css">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="close-overlay hidden">
+            <div class="cl-inner">
+                <div class="cl-content">
+                    <div class="cl-title">
+                        <span>Скрыть рекламу:</span>
+                        <div class="cl-icon"><img src="images/close.svg" width="16" height="16"/></div>
+                    </div>
+                    <div class="cl-table">
+                        <div class="cl-cell cl-icon">Не интересуюсь</div>
+                        <div class="cl-cell cl-icon">Уже купил</div>
+                        <div class="cl-cell cl-icon">Спам</div>
+                        <div class="cl-cell cl-icon">Мешает</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="image no-app-image">
+            <div class="image-shade"></div>
+        </div>
+        <div id="content" class="content">
+            <div class="content-inner">
+                <div class="content-inner-wrapper">
+                    <div class="ad-body">
+                        <div class="footer">
+                            <div class="ads">
+                                <span>Реклама</span>
+                                <span>18+</span>
+                            </div>
+                        </div>
+                        <div class="title-container">
+                            <div class="title" style="font-size: 16px; line-height: 20px;">Новый проект Остров от ДОНСТРОЙТЕХ дома с видом на озеро</div>
+                            <div class="replacing-title hidden">
+                                Содействие в подборе финансовых услуг и организаций содействие в подборе финансовых
+                                <div class="disclaimer">
+                                    Есть противопоказания. Посоветуйтесь с врачом
+                                </div>
+                            </div>
+                        </div>
+                        <div class="link">
+                            <img src="images/fav1.png" width="12" height="12"/>
+                            <a href="#">stroikadomov.ru</a>
+                        </div>
+                    </div>
+                    <div class="ad-action"><img src="images/ad-action-gray.svg" width="50"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="action-small" id="close-action">
+            <div class="action-image">
+<!--                <svg width="3" height="15" viewBox="0 0 4 15" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.75C0 0.783502 0.783502 0 1.75 0C2.7165 0 3.5 0.783502 3.5 1.75C3.5 2.7165 2.7165 3.5 1.75 3.5C0.783502 3.5 0 2.7165 0 1.75ZM0 13.25C0 12.2835 0.783502 11.5 1.75 11.5C2.7165 11.5 3.5 12.2835 3.5 13.25C3.5 14.2165 2.7165 15 1.75 15C0.783502 15 0 14.2165 0 13.25ZM1.75 5.75C0.783502 5.75 0 6.5335 0 7.5C0 8.4665 0.783502 9.25 1.75 9.25C2.7165 9.25 3.5 8.4665 3.5 7.5C3.5 6.5335 2.7165 5.75 1.75 5.75Z" fill="#ffffff"/>-->
+<!--                </svg>-->
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="trigger-button">
+    <span class="in">Включить анимацию</span>
+    <span class="out hidden">Выключить анимацию</span>
+</div>
+</body>
+<script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        var explode = function(){
+            $('.ad-action').css("transform", 'scale(1.2)')
+        };
+        var dotDelay = function() {
+            $('.dot').css('background-color', '#A8AEBC')
+        }
+        var imageDelay = function() {
+            $('.image').css('opacity', 0)
+        }
+        $('#trigger-button').click(function(){
+            if($(this).hasClass('toggled') === false) {
+                $('.in').addClass('hidden')
+                $('.out').removeClass('hidden')
+                $('.out').removeClass('hidden')
+                $('#content').addClass('content-expand');
+                $('.ad-action').removeClass('hidden')
+                $('.content-inner-wrapper').addClass('content-inner-wrapper-opened')
+                // $('.ad-action').delay(1500).addClass('ad-action-animate')
+                // $('.ad-action').delay(1500).css("transform", 'scale(1)')
+                $('.title').css( 'opacity', 0)
+                $('.replacing-title').delay( 200 ).fadeIn( 800 )
+                // $('.title').addClass('hidden')
+                // $('.replacing-title').removeClass('hidden')
+                $(this).addClass('toggled');
+                setTimeout(explode, 1000);
+                setTimeout(dotDelay, 800)
+                setTimeout(imageDelay, 800)
+            }
+            else {
+                $(this).removeClass('toggled');
+                $('.in').removeClass('hidden')
+                $('.out').addClass('hidden')
+                $('#content').removeClass('content-expand');
+                $('.ad-action').addClass('hidden')
+                $('.content-inner-wrapper').removeClass('content-inner-wrapper-opened')
+                // $('.ad-action').removeClass('ad-action-animate')
+                $('.ad-action').delay(500).css("transform", 'scale(0)')
+                $('.title').delay( 300 ).css( 'opacity', 1 )
+                $('.replacing-title').fadeOut( )
+                $('.dot').css('background-color', 'white')
+                $('.image').css('opacity', 1)
+            }
+        })
+
+        $('#close-action').click(function(){
+            $('.close-overlay').removeClass('hidden')
+            $('#trigger-button').css('opacity', '0.4')
+        })
+        $('.cl-icon').click(function(){
+            $('.close-overlay').addClass('hidden')
+            $('#trigger-button').css('opacity', '1')
+        })
+    })
+</script>
