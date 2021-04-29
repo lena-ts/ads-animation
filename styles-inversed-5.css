@@ -45,8 +45,8 @@ a {
 
 .image {
     position: relative;
-    width: 108px;
-    height: 108px;
+    width: 100px;
+    height: 100px;
     float: right;
     background-image: url("images/img-bg.png");
     background-size: cover;
